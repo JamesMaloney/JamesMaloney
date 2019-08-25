@@ -1,0 +1,43 @@
+Package: com.hackyouriphone.spotilife
+Version: 1.0
+Section: HYI - Tweaks
+Maintainer: iLeoLion <repo@hackyouriphone.org>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files/com.hackyouriphone.spotilife_1.0.deb
+Size: 82882
+MD5sum: 5a7f21c5894bfd27db7ecee3ec11c810
+Description: Spotify Unlimited Skips, Remove ADs, Extreme Quality Stream Unlocked... Requires Spotify App (AppStore)
+Name: Spotilife
+Author: julioverne <repo@hackyouriphone.org>
+Homepage: http://repo.hackyouriphone.org/depiction/depiction.php?filename=spotilife
+Depiction: http://repo.hackyouriphone.org/depiction/depiction.php?filename=spotilife
+
+Package: com.pul.hotspotcrack
+Version: 1.0.1.3
+Section: Tweaks
+Maintainer: Pulandres
+Architecture: iphoneos-arm
+Filename: Files/com.pul.hotspotcrack_1.0.1.3.deb
+Size: 4188
+Installed-Size: 69
+MD5sum: 280822a6689953ce8a05889806e00d36
+Description: Free Premium Hotspot Shield. Unfortunately unlimited data might not work, everything else is Premium though.
+Name: Hotspot Shield++
+Author: SarahH12099 <repo@hackyouriphone.org>
+Depiction: https://pulandres.me/repo/index.php?pid=172
+
+Package: org.wuffs.nsfwgram
+Version: 0.0.4
+Section: Tweaks
+Maintainer: Ninji <ninji@wuffs.org>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files/org.wuffs.nsfwgram_0.0.4.deb
+Size: 3348
+Installed-Size: 136
+MD5sum: f6252af98f572d032e535b1982348a6c
+Description: View explicit channels/groups in Telegram (5.0+)
+Name: NSFWgram
+Author: Ninji <ninji@wuffs.org>
+
