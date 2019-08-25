@@ -1,6 +1,6 @@
 //Some fast iOS check.
 is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
-if (!is_ios) document.getElementById('ocy').innerHTML = ' Most probably, you will not be able to open Cydia.';
+if (!is_ios) document.getElementById('errorAlert').innerHTML = '\nMost probably, you will not be able to open Cydia.';
 
 //The functionality for the package list.
 function Apt_package() {
