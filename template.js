@@ -8,12 +8,12 @@ var template = ' \
 <link rel="shortcut icon" href=""> \
 <meta name="robots" content="index,follow"> \
 <!--<meta http-equiv="cache-control" content="no-cache">--> \
-<title>H6nry\'s Cydia repo</title> \
+<title>JamesMaloney\'s Cydia repo</title> \
 </head> \
 <body text="#000000" link="#404040" alink="#404040" vlink="#404040" style="background:none;"> \
  \
-<div align="center" style="background-color:#77ffff"> \
-<h1>H6nry\'s Repo</h1> \
+<div align="center" style="background-color:#FFFFFF"> \
+<h1>JamesMaloney\'s Repo</h1> \
 </div> \
  \
 <div align="center" style="background-color:#FFFFFF;"> \
@@ -24,9 +24,8 @@ var template = ' \
 ' + content + '\
 </div> \
 <hr> \
-<h3><a href="https://twitter.com/H6nry_/" target="_blank">Me on Twitter: H6nry_</a><br> \
-<a href="https://github.com/H6nry/" target="_blank">Me on Github: H6nry</a><br> \
-<a href="http://h6nry.github.io/" target="_blank">My Website</a></h3> \
+<h3><a href="https://twitter.com/iMenchiGiacomo" target="_blank">Twitter: iMenchiGiacomo</a><br> \
+<a href="https://github.com/JamesMaloney" target="_blank">Github: H6nry</a><br> \
 </td> \
 \
 </tr> \
