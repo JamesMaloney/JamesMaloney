@@ -50,8 +50,8 @@ var template = '\
 <body class="tp-dync2"> \
 \
 <header class="tp-dync" align="center" style="background-color:#77ffff; font-family: serif; width:100%;"> \
-	<h1>H6nry\'s page</h1> \
-	"A different kind of magic." \
+	<h1>JamesMaloney\'s space</h1> \
+	"Yeah, cool website, but where's the repo?." \
 </header> \
  \
 \
@@ -65,7 +65,7 @@ var template = '\
 	<a href="/surutcra.html">Surutcra - A Twitter client</a><br><br> \
 	<a href="/ncforward.html">NCForward - Forward your notifications</a><br><br> \
     <a href="/common-theos-problems.html">A collection of common THEOS problems</a><br><br> \
-	<a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
+	<a href="http://github.com/JamesMaloney/" target="_blank">Github</a><br><br> \
 </nav> \
 <aside class="tp-dync"> \
 	<h4>News</h4> \
