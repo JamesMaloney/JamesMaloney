@@ -51,7 +51,7 @@ var template = '\
 \
 <header class="tp-dync" align="center" style="background-color:#77ffff; font-family: serif; width:100%;"> \
 	<h1>JamesMaloney\'s space</h1> \
-	"Yeah, cool website, but where's the repo\?." \
+	"Yeah, cool website, but where\'s the repo?" \
 </header> \
  \
 \
