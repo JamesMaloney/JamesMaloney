@@ -1,7 +1,8 @@
 //iOS Device Checker
 is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
+var funfunfun = 'Add this repo to Cydia'
 if(is_ios)
-	document.getElementById('idevice').innerHTML = 'Add this repo to Cydia';
+	document.getElementById('idevice').innerHTML = funfunfun;
 else {
 	document.getElementById('idevice').style.color = "red";
 	document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
@@ -81,11 +82,6 @@ xhr.onreadystatechange = function() {
 			'</div>';
 	}
 };
-
-<a href="pages/com.pul.hotspotcrack">
-				<img class="icon" src="icons/default.png" width="58" height="58"><div>
-				<label>Hotspot Shield++</label>
-			</div></a>
 
 xhr.open("GET","Packages");
 xhr.send();
