@@ -72,7 +72,7 @@ xhr.onreadystatechange = function() {
 		var pack = packagesList[key];
 		//The following code is very messy. You have been warned.
 		document.getElementById('tweaks').innerHTML = document.getElementById('tweaks').innerHTML
-		+ '<a href="pages/' + pack.Package + '"> <'); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
+		+ '<a href="pages/' + pack.Package + '"> <); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
 			pack.Name + ' (' + pack.Version + ')</a><br>' +
 			'<div id="u_' + pack.Package + '" style="display:none;">' +
 			'&nbsp;&nbsp;' + pack.Description + '<br>' +
