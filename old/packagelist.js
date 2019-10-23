@@ -89,6 +89,8 @@ function parsePackages(parse) {
     return depictions;
 }
 
+//Checked until here
+
 var xhr;
 if (window.XMLHttpRequest) {
     xhr = new XMLHttpRequest();
