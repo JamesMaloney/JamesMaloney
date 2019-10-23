@@ -1,4 +1,8 @@
-To make Packages on iPhone do:
+To extract and recompress .deb archives:
+dpkg-deb -R package.deb foldertoextract
+dpkg-deb -b folderextracted package.deb
+
+To make Packages on iPhone:
 ./dpkg-scanpackages debs /dev/null > Packages
 
 To make .gz and .bz2:
