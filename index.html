@@ -41,7 +41,7 @@
 				</div>
 			</a>
 		</fieldset>
-		<span id="idevice"></span>
+		<div id="idevice" style="color: red;"></div>
 		<script>
 			is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
 			if(!is_ios) document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
