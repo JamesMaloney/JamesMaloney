@@ -9,6 +9,7 @@
 		<link rel="shortcut icon" href="favicon.ico">
 	</head>
 	<body class="iOS">
+		<script src="listrepo.js"></script>
 		<panel>
 			<fieldset style="background-color: #FFD8F0">
 				<a href="https://jamesmaloney.github.io/">
@@ -41,16 +42,6 @@
 				</div>
 			</a>
 		</fieldset>
-		<script>
-			is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
-			if(is_ios)
-				document.getElementById('idevice').innerHTML = 'Add this repo to Cydia';
-			else 
-			{
-				document.getElementById('idevice').style.color = "red";
-				document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
-			}
-		</script>
 		<label>Tweaks</label>
 		<fieldset>
 			<a href="pages/com.pul.hotspotcrack">
