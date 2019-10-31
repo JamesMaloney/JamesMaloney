@@ -75,7 +75,7 @@ xhr.onreadystatechange = function() {
 		var pack = packagesList[key];
 		//The following code is very messy. You have been warned.
 		document.getElementById('tweaks').innerHTML = document.getElementById('tweaks').innerHTML
-		+ '<a href="pages/' + pack.Package + '">'
+		+ '<a href="pages/' + pack.Package + '/index.html?id=com.example.identifier">'
 		+ '<img class="icon" src="icons/' + pack.Package + '.png" onerror="this.src=\'icons/default.png\';" width="58" height="58">'
 		+ '<div><label>' + pack.Name + '</label></div></a>';
 	}
