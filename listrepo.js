@@ -65,7 +65,7 @@ else if (window.ActiveXObject)
 
 xhr.onreadystatechange = function() {
 	if (!(xhr.readyState == 4)) return;
-	var packagesList = parsePackages(xhr.responseText);
+	var packagesList = parsePackagesFile(xhr.responseText);
 	if (!packagesList)
 		return;
 	for(key in packagesList) {
