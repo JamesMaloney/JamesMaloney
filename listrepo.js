@@ -41,12 +41,15 @@ function parsePackage(packageString) {
 		if(lines[c].search(':') == -1)
 			continue;
 		//Quick and dirty.
-		switch(lines[c].split(':').shift()) {
+		var components = lines[c].split(':');
+		var key = components.shift();
+		var value = components.join(':').trim();
+		switch(key) {
 			case 'Package':
-				singlePackage.Package = lines[c].split(':').join(':').trim();
+				singlePackage.Package = value;
 				break;
 			case 'Name':
-				singlePackage.Name = lines[c].split(':').join(':').trim();
+				singlePackage.Name = value;
 				break;
 			default:
 				break;
