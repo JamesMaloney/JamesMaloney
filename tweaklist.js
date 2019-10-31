@@ -77,16 +77,7 @@ xhr.onreadystatechange = function() {
 		document.getElementById('tweaks').innerHTML = document.getElementById('tweaks').innerHTML
 		+ '<a href="pages/' + pack.Package + '">'
 		+ '<img class="icon" src="icons/' + pack.Package + '.png" onerror="this.src=\'icons/default.png\';" width="58" height="58">'
-		+ '<div><label>' + pack.Name + '</label></div></a>'
-		
-/* 		); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
-			pack.Name + ' (' + pack.Version + ')</a><br>' +
-			'<div id="u_' + pack.Package + '" style="display:none;">' +
-			'&nbsp;&nbsp;' + pack.Description + '<br>' +
-			(is_ios ? '&nbsp;&nbsp;<a href="' +  'cydia://url/https://cydia.saurik.com/api/share#?source=http://h6nry.github.io/repo/&package=' + pack.Package + '" target="_blank">Show in Cydia.</a><br>' : '') +
-			'&nbsp;&nbsp;<a href="' + pack.Depiction + '" target="_blank">Show more info.</a><br>' +
-			'&nbsp;&nbsp;<a href="' + pack.Filename + '" target="_blank">Download the .deb package.</a><br><br>' +
-			'</div>'; */
+		+ '<div><label>' + pack.Name + '</label></div></a>';
 	}
 };
 
