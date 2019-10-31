@@ -83,5 +83,12 @@ xhr.onreadystatechange = function() {
 	}
 };
 
+
+/* <a href="pages/com.pul.hotspotcrack">
+	<img class="icon" src="icons/default.png" width="58" height="58"><div>
+				<label>Hotspot Shield++</label>
+			</div></a> */
+
+
 xhr.open("GET","Packages");
 xhr.send();
