@@ -72,7 +72,7 @@ xhr.onreadystatechange = function() {
 	
 	//Give custom compatibility
 	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
-	+ 'This package is <strong style="color: #38761E;">compatible with everything you have, even your microwave</strong>.'
+	+ 'This package is <strong style="color: #38761E;">compatible with iOS ' + 'miniosplaceholder' + 'to ' + 'maxiosplaceholder' + '</strong>.'
 	
 	//Give custom Cydia opener (only on iOS, otherwise red text with error)
 	if(is_ios) {
