@@ -2,6 +2,5 @@ Welcome to my own Cydia Repo, where I repost other's packages that I like (and s
 
 TODO:
 
-- Automatize pages creation
-- Add "View in Cydia" iDevice check
+- Automatize pages creation (only compatibility left)
 - Create custom depictions

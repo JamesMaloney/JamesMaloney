@@ -66,11 +66,15 @@ xhr.onreadystatechange = function() {
 	if (!(xhr.readyState == 4)) return;
 	var pack = findPackage(xhr.responseText, id);
 	
-	//Give correct title
+	//Give custom title
 	document.getElementById('title').innerHTML = document.getElementById('title').innerHTML
 	+ 'The REPOster - ' + pack.Name;
 	
-	//Give correct Cydia opener (only on iOS, otherwise red text with error)
+	//Give custom compatibility
+	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
+	+ 'This package is <strong style="color: #38761E;">compatible with everything you have, even your microwave</strong>.'
+	
+	//Give custom Cydia opener (only on iOS, otherwise red text with error)
 	if(is_ios) {
 		document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
 		+ '<a href="cydia://package/' + pack.Package + '">'
@@ -83,7 +87,7 @@ xhr.onreadystatechange = function() {
 		+ '<div><label style="color: red">Only available through iDevice!</label></div></a>';
 	}
 	
-	//Give correct description
+	//Give custom description
 	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
 	+ pack.Description;
 };
