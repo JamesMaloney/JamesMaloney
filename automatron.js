@@ -1,12 +1,11 @@
 //iOS Device Checker
-/* is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
-var funfunfun = 'Add this repo to Cydia'
+is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
 if(is_ios)
-	document.getElementById('idevice').innerHTML = funfunfun;
+	document.getElementById('idevice').innerHTML = 'View in Cydia';
 else {
 	document.getElementById('idevice').style.color = "red";
 	document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
-} */
+}
 
 //apt_package object constructor, used for repo listing
 function aptPackage() {
@@ -81,7 +80,7 @@ xhr.onreadystatechange = function() {
 	document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
 	+ '<a href="cydia://package/' + pack.Package + '">'
 	+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
-	+ '<div><label>View in Cydia</label></div></a>';
+	+ '<div><label id="idevice"></label></div></a>';
 	
 	//Give correct description
 	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
