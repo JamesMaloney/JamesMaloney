@@ -4,23 +4,23 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>The REPOster - Generic Package</title>
+		<title id="title"></title> <!-- Insert package title -->
 		<base target="_top">
-		<link href="../../theme/jonyive/resources/jonyive.css" rel="stylesheet">
+		<link href="/theme/jonyive/resources/jonyive.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="shortcut icon" href="../../favicon.ico">
+		<link rel="shortcut icon" href="favicon.ico">
 	</head>
 	<body class="iOS">
 		<panel>
 			<fieldset style="background-color: #FFD8F0">
 				<a href="https://jamesmaloney.github.io/">
-					<img class="icon" src="../../CydiaIcon.png">
+					<img class="icon" src="CydiaIcon.png">
 					<div>
 						<label>The REPOster</label>
 					</div>
 				</a>
 			</fieldset>
-			<block style="background-color:white;">This version is <strong style="color:#38761E;">compatible with everything you have, even your microwave</strong>.</block>
+			<block style="background-color:white;">This version is <strong style="color:#38761E;">compatible with everything you have, even your microwave</strong>.</block> <!-- Insert compatibility -->
 			<script type="application/json" id="CompatibilityData">
 				{
 					"iphoneSupported": true,
@@ -38,15 +38,16 @@
 				}
 			</script>
 			<fieldset>
-				<a href="cydia://package/com.julioverne.spotilife">
-					<img class="icon" src="../../theme/jonyive/resources/cydia.png" width="58" height="58">
+				<!-- <a href="cydia://package/com.julioverne.spotilife"> Insert package id
+					<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">
 					<div>
 						<label>View in Cydia</label>
 					</div>
-				</a>
+				</a> -->
+				<a id="opencydia"></a>
 			</fieldset>
 			<block>
-				<p>Sample Text (Thanks Obama).</p>
+				<p id="description"></p> <!-- Insert package description -->
 			</block>
 			<fieldset class="footer">
 				<label>Copyright &copy; 2019 JamesMaloney, All Rights Reserved.</label>

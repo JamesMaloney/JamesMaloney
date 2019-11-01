@@ -20,16 +20,10 @@ function parsePackagesFile(packagesFile) {
 	while(packagesFile.indexOf('\r') >= 0)
 		packagesFile = packagesFile.replace('\r', '');
 	var packages = packagesFile.split('\n\n');
+	//Maybe simpler
 	for(var c = 0; c < packages.length; ++c) {
 		var singlePackage = parsePackage(packages[c]);
-		if(singlePackage == undefined)
-			continue;
-		var packageID = singlePackage.Package;
-		//Only keep the latest version.
-		if(packagesList[packageID] && (parseFloat(singlePackage.Version) >= parseFloat(packagesList[packageID].Version)))
-			packagesList[packageID] = singlePackage;
-		else if(packagesList[packageID] == undefined)
-			packagesList[packageID] = singlePackage;
+		packagesList[packageID] = singlePackage;
 	}
     return packagesList;
 }
@@ -60,6 +54,7 @@ function parsePackage(packageString) {
 	return singlePackage;
 }
 
+//Starts here
 var xhr;
 if(window.XMLHttpRequest)
 	xhr = new XMLHttpRequest();
