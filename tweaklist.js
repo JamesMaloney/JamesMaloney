@@ -1,12 +1,3 @@
-//iOS Device Checker
-is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
-if(is_ios)
-	document.getElementById('idevice').innerHTML = 'Add this repo to Cydia';
-else {
-	document.getElementById('idevice').style.color = "red";
-	document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
-}
-
 //apt_package object constructor, used for repo listing
 function aptPackage() {
 	this.Package;
@@ -74,6 +65,15 @@ xhr.onreadystatechange = function() {
 		+ '<div><label>' + pack.Name + '</label></div></a>';
 	}
 };
+
+//iOS Device Checker
+is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
+if(is_ios)
+	document.getElementById('idevice').innerHTML = 'Add this repo to Cydia';
+else {
+	document.getElementById('idevice').style.color = "red";
+	document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
+}
 
 xhr.open("GET","Packages");
 xhr.send();
