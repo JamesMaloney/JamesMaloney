@@ -11,6 +11,7 @@ else {
 //apt_package object constructor, used for repo listing
 function aptPackage() {
 	this.Package;
+	this.Description;
 	this.Name;
 }
 
@@ -43,6 +44,9 @@ function parsePackage(packageString) {
 			case 'Package':
 				singlePackage.Package = value;
 				break;
+			case 'Description':
+				singlePackage.Description = value;
+				break;
 			case 'Name':
 				singlePackage.Name = value;
 				break;
@@ -70,6 +74,8 @@ xhr.onreadystatechange = function() {
 	var pack = findPackage(xhr.responseText, id);
 	document.getElementById('title').innerHTML = document.getElementById('title').innerHTML
 	+ 'The REPOster - ' + pack.Name;
+	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
+	+ pack.Description;
 };
 
 xhr.open("GET","Packages");
