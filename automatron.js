@@ -80,7 +80,7 @@ xhr.onreadystatechange = function() {
 		document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
 		+ '<a href="cydia://package/' + pack.Package + '">'
 		+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
-		+ '<div><label color="red">Only available through iDevice!</label></div></a>';
+		+ '<div><label style="color: red">Only available through iDevice!</label></div></a>';
 	}
 	
 	//Give correct description
