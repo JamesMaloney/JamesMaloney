@@ -23,7 +23,7 @@ function parsePackagesFile(packagesFile) {
 	//Maybe simpler
 	for(var c = 0; c < packages.length; ++c) {
 		var singlePackage = parsePackage(packages[c]);
-		packagesList[packageID] = singlePackage;
+		packagesList[singlePackage.Package] = singlePackage;
 	}
     return packagesList;
 }
