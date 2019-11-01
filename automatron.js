@@ -72,8 +72,13 @@ else if (window.ActiveXObject)
 xhr.onreadystatechange = function() {
 	if (!(xhr.readyState == 4)) return;
 	var pack = findPackage(xhr.responseText, id);
+	//Give correct title
 	document.getElementById('title').innerHTML = document.getElementById('title').innerHTML
 	+ 'The REPOster - ' + pack.Name;
+	//Give correct Cydia opener
+	document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
+	+ 'href="cydia://package/' + pack.Package + '"';
+	//Give correct description
 	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
 	+ pack.Description;
 };
