@@ -20,7 +20,6 @@ function parsePackagesFile(packagesFile) {
 	while(packagesFile.indexOf('\r') >= 0)
 		packagesFile = packagesFile.replace('\r', '');
 	var packages = packagesFile.split('\n\n');
-	//Maybe simpler
 	for(var c = 0; c < packages.length; ++c) {
 		var singlePackage = parsePackage(packages[c]);
 		if(singlePackage == undefined)
@@ -70,7 +69,6 @@ xhr.onreadystatechange = function() {
 		return;
 	for(key in packagesList) {
 		var pack = packagesList[key];
-		//The following code is very messy. You have been warned.
 		document.getElementById('tweaks').innerHTML = document.getElementById('tweaks').innerHTML
 		+ '<a href="package?id=' + pack.Package + '">'
 		+ '<img class="icon" src="icons/' + pack.Package + '.png" onerror="this.src=\'icons/default.png\';" width="58" height="58">'

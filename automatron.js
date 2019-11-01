@@ -1,12 +1,12 @@
 //iOS Device Checker
-is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
+/* is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
 var funfunfun = 'Add this repo to Cydia'
 if(is_ios)
 	document.getElementById('idevice').innerHTML = funfunfun;
 else {
 	document.getElementById('idevice').style.color = "red";
 	document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
-}
+} */
 
 //apt_package object constructor, used for repo listing
 function aptPackage() {
@@ -25,12 +25,6 @@ function findPackage(packagesFile, packageToFind) {
 			continue;
 		if(singlePackage.Package === packageToFind)
 			break;
-		var packageID = singlePackage.Package;
-		//Only keep the latest version.
-		if(packagesList[packageID] && (parseFloat(singlePackage.Version) >= parseFloat(packagesList[packageID].Version)))
-			packagesList[packageID] = singlePackage;
-		else if(packagesList[packageID] == undefined)
-			packagesList[packageID] = singlePackage;
 	}
     return singlePackage;
 }
@@ -61,10 +55,9 @@ function parsePackage(packageString) {
 	return singlePackage;
 }
 
-//Starts here
+//Starts by getting the package id
 var url = new URL(window.location.href);
 var id = url.searchParams.get("id");
-console.log(id);
 
 var xhr;
 if(window.XMLHttpRequest)
@@ -75,17 +68,8 @@ else if (window.ActiveXObject)
 xhr.onreadystatechange = function() {
 	if (!(xhr.readyState == 4)) return;
 	var pack = findPackage(xhr.responseText, id);
-	if (!pack)
-		return;
-	//Everything I have to do with the package info
-	/* for(key in packagesList) {
-		var pack = packagesList[key];
-		//The following code is very messy. You have been warned.
-		document.getElementById('tweaks').innerHTML = document.getElementById('tweaks').innerHTML
-		+ '<a href="package?id=' + pack.Package + '">'
-		+ '<img class="icon" src="icons/' + pack.Package + '.png" onerror="this.src=\'icons/default.png\';" width="58" height="58">'
-		+ '<div><label>' + pack.Name + '</label></div></a>';
-	} */
+	document.getElementById('title').innerHTML = document.getElementById('title').innerHTML
+	+ 'The REPOster - ' + pack.Name;
 };
 
 xhr.open("GET","Packages");
