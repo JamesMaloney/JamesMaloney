@@ -1,4 +1,4 @@
-//apt_package object constructor, used for repo listing
+//aptPackage object constructor, used for repo listing
 function aptPackage() {
 	this.Package;
 	this.Name;

@@ -1,4 +1,4 @@
-//apt_package object constructor, used for repo listing
+//aptPackage object constructor, used for repo listing
 function aptPackage() {
 	this.Package;
 	this.Description;
@@ -53,6 +53,9 @@ function parsePackage(packageString) {
 var url = new URL(window.location.href);
 var id = url.searchParams.get("id");
 
+//iOS Device Checker
+is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
+
 var xhr;
 if(window.XMLHttpRequest)
 	xhr = new XMLHttpRequest();
@@ -67,25 +70,23 @@ xhr.onreadystatechange = function() {
 	document.getElementById('title').innerHTML = document.getElementById('title').innerHTML
 	+ 'The REPOster - ' + pack.Name;
 	
-	//Give correct Cydia opener
-	document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
-	+ '<a href="cydia://package/' + pack.Package + '">'
-	+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
-	+ '<div><label id="idevice"></label></div></a>';
+	//Give correct Cydia opener (only on iOS, otherwise red text with error)
+	if(is_ios) {
+		document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
+		+ '<a href="cydia://package/' + pack.Package + '">'
+		+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
+		+ '<div><label>View in Cydia</label></div></a>';
+	} else {
+		document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
+		+ '<a href="cydia://package/' + pack.Package + '">'
+		+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
+		+ '<div><label color="red">Only available through iDevice!</label></div></a>';
+	}
 	
 	//Give correct description
 	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
 	+ pack.Description;
 };
-
-//iOS Device Checker
-is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
-if(is_ios)
-	document.getElementById('idevice').innerHTML = 'View in Cydia';
-else {
-	document.getElementById('idevice').style.color = "red";
-	document.getElementById('idevice').innerHTML = 'Only available through iDevice!';
-}
 
 xhr.open("GET","Packages");
 xhr.send();
