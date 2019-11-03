@@ -8,6 +8,7 @@ function aptPackage() {
 
 //Latest jailbreakable iOS version, used for compatibility
 const latestjb = 12.4;
+const latestiossupported = "(possibly) " + latestjb;
 
 function findPackage(packagesFile, packageToFind) { 
 	//Remove all carriage returns, which should not be there, anyways.
@@ -79,13 +80,24 @@ xhr.onreadystatechange = function() {
 	+ 'The REPOster - ' + pack.Name;
 	
 	//Give custom compatibility
-	/* if(pack.Depends == undefined || pack.Depends) {
+	/* var fwdepends = pack.Depends.split('firmware (');
+	if(pack.Depends == undefined || fwdepends.length == 1) {
+		//No firmware dependecies (or no dependecies at all) specified: unknown compatibility
 		document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
-	+ 'This package has <strong style="color: #BF9000;;">unknown compatibility'</strong>.'
+		+ 'This package has <strong style="color: #BF9000;;">unknown compatibility'</strong>.'
+	} else if(fwdepends.length == 2) {
+		//One firmware dependency specified
+		
+		document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
+		+ 'This package has <strong style="color: #BF9000;;">unknown compatibility'</strong>.'
+	} else {
+		//Two firmware dependecies specified: both min and max iOS versions known
+		if(fwdepends[0]
 	} */
+	
 	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
 	+ 'This package is <strong style="color: #38761E;">compatible with iOS ' + 'miniosplaceholder' + ' to ' + latestjb + '</strong>.'
-	+ pack.Depends;
+	+ pack.Depends + latestiossupported;
 	
 	//Give custom Cydia opener (only on iOS, otherwise red text with error)
 	if(is_ios) {
