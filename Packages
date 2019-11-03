@@ -48,6 +48,23 @@ Name: Liberty Lite
 Author: Ryley Angus
 Icon: file:///Library/PreferenceBundles/LibertyPref.bundle/LibertyPref.png
 
+Package: net.angelxwind.stash841
+Version: 1.0
+Section: System
+Maintainer: Karen/あけみ (angelXwind) <angelXwind@angelxwind.net>
+Depends: net.tihmstar.etasonuntether (>= 1.1.0), firmware (= 8.4.1)
+Conflicts: 
+Replaces: 
+Architecture: iphoneos-arm
+Filename: debs/net.angelxwind.stash841_1.0.deb
+Size: 1022
+MD5sum: 9aeb01dd280b82053002dcbc3a8d0357
+Description: Enables stashing on #etasonJB (iOS 8.4.1)
+Name: Stashing for #etasonJB (8.4.1)
+Author: Karen/あけみ (angelXwind) <angelXwind@angelxwind.net>
+Homepage: https://cydia.angelxwind.net/
+Depiction: https://cydia.angelxwind.net/?page/net.angelxwind.stash841
+
 Package: org.wuffs.nsfwgram
 Version: 0.0.6
 Section: Tweaks
