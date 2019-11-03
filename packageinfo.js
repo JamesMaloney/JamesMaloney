@@ -39,6 +39,7 @@ function parsePackage(packageString) {
 				singlePackage.Package = value;
 				break;
 			case 'Depends':
+			case 'Pre-Depends':
 				singlePackage.Depends = value;
 				break;
 			case 'Description':
