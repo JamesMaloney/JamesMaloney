@@ -1,6 +1,7 @@
 //aptPackage object constructor, used for repo listing
 function aptPackage() {
 	this.Package;
+	this.Depends;
 	this.Description;
 	this.Name;
 }
@@ -36,6 +37,9 @@ function parsePackage(packageString) {
 		switch(key) {
 			case 'Package':
 				singlePackage.Package = value;
+				break;
+			case 'Depends':
+				singlePackage.Depends = value;
 				break;
 			case 'Description':
 				singlePackage.Description = value;
@@ -74,8 +78,13 @@ xhr.onreadystatechange = function() {
 	+ 'The REPOster - ' + pack.Name;
 	
 	//Give custom compatibility
+	/* if(pack.Depends == undefined || pack.Depends) {
+		document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
+	+ 'This package has <strong style="color: #BF9000;;">unknown compatibility'</strong>.'
+	} */
 	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
 	+ 'This package is <strong style="color: #38761E;">compatible with iOS ' + 'miniosplaceholder' + ' to ' + latestjb + '</strong>.'
+	+ pack.Depends;
 	
 	//Give custom Cydia opener (only on iOS, otherwise red text with error)
 	if(is_ios) {

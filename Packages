@@ -48,6 +48,24 @@ Name: Liberty Lite
 Author: Ryley Angus
 Icon: file:///Library/PreferenceBundles/LibertyPref.bundle/LibertyPref.png
 
+Package: net.angelxwind.appsync40plus
+Version: 1.2.2
+Section: Tweaks
+Maintainer: Karen/あけみ (angelXwind) <angelXwind@angelxwind.net>
+Pre-Depends: firmware (>= 4.0), firmware (<< 5.0)
+Conflicts: us.hackulo.appsync40, us.hackulo.appsync41, us.hackulo.appsync42
+Provides: appsync, us.hackulo.appsync40, us.hackulo.appsync41, us.hackulo.appsync42
+Replaces: us.hackulo.appsync40, us.hackulo.appsync41, us.hackulo.appsync42
+Architecture: iphoneos-arm
+Filename: debs/net.angelxwind.appsync40plus_1.2.2.deb
+Size: 9254
+MD5sum: f3e62178b61e4f457ed189b8dbac796e
+Description: AppSync Unified allows you to sync and install unsigned iOS applications. Only for iOS 4.
+Name: AppSync for iOS 4.0
+Author: Karen/あけみ, Dissident <angelXwind@angelxwind.net>
+Homepage: https://cydia.angelxwind.net/
+Depiction: https://cydia.angelxwind.net/?page/net.angelxwind.appsync40plus
+
 Package: net.angelxwind.stash841
 Version: 1.0
 Section: System
