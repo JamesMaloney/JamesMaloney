@@ -8,7 +8,6 @@ function aptPackage() {
 
 //Latest jailbreakable iOS version, used for compatibility
 const latestjb = 12.4;
-const latestiossupported = "(possibly) " + latestjb;
 
 function findPackage(packagesFile, packageToFind) { 
 	//Remove all carriage returns, which should not be there, anyways.
@@ -80,37 +79,60 @@ xhr.onreadystatechange = function() {
 	+ 'The REPOster - ' + pack.Name;
 	
 	//Give custom compatibility
-	/* var fwdepends = pack.Depends.split('firmware (');
-	if(pack.Depends == undefined || fwdepends.length == 1) {
-		//No firmware dependecies (or no dependecies at all) specified: unknown compatibility
-		document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
-		+ 'This package has <strong style="color: #BF9000;;">unknown compatibility'</strong>.'
-	} else if(fwdepends.length == 2) {
-		//One firmware dependency specified
-		
-		document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
-		+ 'This package has <strong style="color: #BF9000;;">unknown compatibility'</strong>.'
-	} else {
-		//Two firmware dependecies specified: both min and max iOS versions known
-		if(fwdepends[0]
-	} */
+	var fwdepends = pack.Depends.split('firmware (');
 	
-	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML
-	+ 'This package is <strong style="color: #38761E;">compatible with iOS ' + 'miniosplaceholder' + ' to ' + latestjb + '</strong>.'
-	+ pack.Depends + latestiossupported;
+	//The default compatibility is "incompatible"
+	var compstring = 'This package has <strong style="color: #BF9000;;">unknown compatibility';
+	if(!pack.Depends == undefined && fwdepends.length != 1) {
+		if(fwdepends[1].charAt(0) == '=') {
+			compstring = 'This package is <strong style="color: #38761E;">only compatible with iOS '
+			+ fwdepends[1].substring(fwdepends[1].indexOf(' '), fwdepends[1].indexOf(')'));
+		} else {
+			var ispresent = false;
+			compstring = 'This package is <strong style="color: #38761E;">compatible with iOS ';
+			for(var fd = 1; fd < fwdepends.length; ++fd) {
+				if(fwdepends[fd].charAt(0) == '>') {
+					compstring += fwdepends[fd].substring(fwdepends[fd].indexOf(' '), fwdepends[fd].indexOf(')'));
+					ispresent = true;
+					break;
+				}
+			}
+			if(!ispresent)
+				compstring += 'up to ';
+			else
+				compstring += ' to ';
+			ispresent = false;
+			for(var fd = 1; fd < fwdepends.length; ++fd) {
+				if(fwdepends[fd].charAt(0) == '<')
+					if(fwdepends[fd].charAt(1) == '=') {
+						compstring += fwdepends[fd].substring(fwdepends[fd].indexOf(' '), fwdepends[fd].indexOf(')'));
+						ispresent = true;
+						break;
+					}
+					else {
+						compstring += fwdepends[fd].substring(fwdepends[fd].indexOf(' '), fwdepends[fd].indexOf(')'));
+						compstring += ' excluded';
+						ispresent = true;
+						break;
+					}
+			}
+			if(!ispresent)
+				compstring += '(possibly) ' + latestjb;
+		}
+	}	
+	compstring += '</strong>.';
+	
+	//Final print
+	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML + compstring;
 	
 	//Give custom Cydia opener (only on iOS, otherwise red text with error)
+	var opencydia = '<a href="cydia://package/' + pack.Package + '">' + '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">';
 	if(is_ios) {
-		document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
-		+ '<a href="cydia://package/' + pack.Package + '">'
-		+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
-		+ '<div><label>View in Cydia</label></div></a>';
+		opencydia += '<div><label>View in Cydia</label></div></a>';
 	} else {
-		document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML
-		+ '<a href="cydia://package/' + pack.Package + '">'
-		+ '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">'
-		+ '<div><label style="color: red">Only available through iDevice!</label></div></a>';
+		opencydia += '<div><label style="color: red">Only available through iDevice!</label></div></a>';
 	}
+	document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML + opencydia;
 	
 	//Give custom description
 	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
