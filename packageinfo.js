@@ -83,7 +83,7 @@ xhr.onreadystatechange = function() {
 	
 	//The default compatibility is "incompatible"
 	var compstring = 'This package has <strong style="color: #BF9000;;">unknown compatibility';
-	if(pack.Depends != undefined && fwdepends.length != 1) {
+	if(fwdepends.length > 1) {
 		if(fwdepends[1].charAt(0) == '=') {
 			compstring = 'This package is <strong style="color: #38761E;">only compatible with iOS '
 			+ fwdepends[1].substring(fwdepends[1].indexOf(' '), fwdepends[1].indexOf(')'));
