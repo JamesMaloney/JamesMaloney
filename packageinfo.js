@@ -75,8 +75,7 @@ xhr.onreadystatechange = function() {
 	var pack = findPackage(xhr.responseText, id);
 	
 	//Give custom title
-	document.getElementById('title').innerHTML = document.getElementById('title').innerHTML
-	+ 'The REPOster - ' + pack.Name;
+	document.getElementById('title').innerHTML += 'The REPOster - ' + pack.Name;
 	
 	//Give custom compatibility
 	var fwdepends = pack.Depends.split('firmware (');
@@ -85,11 +84,13 @@ xhr.onreadystatechange = function() {
 	var compstring = 'This package has <strong style="color: #BF9000;;">unknown compatibility';
 	if(fwdepends.length > 1) {
 		if(fwdepends[1].charAt(0) == '=') {
+			//The package is only compatible with one iOS version
 			compstring = 'This package is <strong style="color: #38761E;">only compatible with iOS '
 			+ fwdepends[1].substring(fwdepends[1].indexOf(' '), fwdepends[1].indexOf(')'));
 		} else {
 			var ispresent = false;
 			compstring = 'This package is <strong style="color: #38761E;">compatible with iOS ';
+			//The package has a minumum iOS version
 			for(var fd = 1; fd < fwdepends.length; ++fd) {
 				if(fwdepends[fd].charAt(0) == '>') {
 					compstring += fwdepends[fd].substring(fwdepends[fd].indexOf(' '), fwdepends[fd].indexOf(')'));
@@ -102,13 +103,16 @@ xhr.onreadystatechange = function() {
 			else
 				compstring += ' to ';
 			ispresent = false;
+			//The package has a maximum iOS version
 			for(var fd = 1; fd < fwdepends.length; ++fd) {
 				if(fwdepends[fd].charAt(0) == '<')
+					//Maximum iOS version is indicated as <=
 					if(fwdepends[fd].charAt(1) == '=') {
 						compstring += fwdepends[fd].substring(fwdepends[fd].indexOf(' '), fwdepends[fd].indexOf(')'));
 						ispresent = true;
 						break;
 					}
+					//Maximum iOS version is indicated as << (indicated version is excluded)
 					else {
 						compstring += fwdepends[fd].substring(fwdepends[fd].indexOf(' '), fwdepends[fd].indexOf(')'));
 						compstring += ' excluded';
@@ -123,7 +127,7 @@ xhr.onreadystatechange = function() {
 	compstring += '</strong>.';
 	
 	//Final print
-	document.getElementById('compatibility').innerHTML = document.getElementById('compatibility').innerHTML + compstring;
+	document.getElementById('compatibility').innerHTML += compstring;
 	
 	//Give custom Cydia opener (only on iOS, otherwise red text with error)
 	var opencydia = '<a href="cydia://package/' + pack.Package + '">' + '<img class="icon" src="/theme/jonyive/resources/cydia.png" width="58" height="58">';
@@ -132,11 +136,10 @@ xhr.onreadystatechange = function() {
 	} else {
 		opencydia += '<div><label style="color: red">Only available through iDevice!</label></div></a>';
 	}
-	document.getElementById('opencydia').innerHTML = document.getElementById('opencydia').innerHTML + opencydia;
+	document.getElementById('opencydia').innerHTML += opencydia;
 	
 	//Give custom description
-	document.getElementById('description').innerHTML = document.getElementById('description').innerHTML
-	+ pack.Description;
+	document.getElementById('description').innerHTML += pack.Description;
 };
 
 xhr.open("GET","Packages");

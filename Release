@@ -2,7 +2,7 @@ Origin: The REPOster
 Label: The REPOster
 Suite: stable
 Version: 1.0
-Codename: jmrepo
+Codename: james
 Architectures: iphoneos-arm
 Components: main
 Description: The REPOster's Cydia Repository

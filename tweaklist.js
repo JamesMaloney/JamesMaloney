@@ -59,8 +59,7 @@ xhr.onreadystatechange = function() {
 		return;
 	for(key in packagesList) {
 		var pack = packagesList[key];
-		document.getElementById('tweaks').innerHTML = document.getElementById('tweaks').innerHTML
-		+ '<a href="package?id=' + pack.Package + '">'
+		document.getElementById('tweaks').innerHTML += '<a href="package?id=' + pack.Package + '">'
 		+ '<img class="icon" src="icons/' + pack.Package + '.png" onerror="this.src=\'icons/default.png\';" width="58" height="58">'
 		+ '<div><label>' + pack.Name + '</label></div></a>';
 	}
