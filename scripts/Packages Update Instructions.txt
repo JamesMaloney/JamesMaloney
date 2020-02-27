@@ -13,3 +13,9 @@ To push all to host:
 git add -A
 git commit -m "Repo"
 git push -u origin master
+
+
+IMPORTANT NOTES
+
+Never edit "dpkg-scanpackages" or "dpkg-gettext.pl" on Windows: it will produce a "No such file or directory" error;
+If md5 error is produced, replace every "md5" with "md5sum" inside "dpkg-scanpackages" (should be 3 entries).
