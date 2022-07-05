@@ -2,5 +2,5 @@
 var url = new URL(window.location.href);
 var shoe_name = url.searchParams.get("name");
 
-document.getElementById("model").setAttribute("src", shoe_name + ".glb");
-document.getElementById("model").setAttribute("ios-src", shoe_name + ".usdz");
+document.getElementById("model").setAttribute("src", "https://raw.githubusercontent.com/santoniconfigurator/ARTest/main/Test/" + shoe_name + ".glb");
+document.getElementById("model").setAttribute("ios-src", "https://raw.githubusercontent.com/santoniconfigurator/ARTest/main/Test/" + shoe_name + ".usdz");
