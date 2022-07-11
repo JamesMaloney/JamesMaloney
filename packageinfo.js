@@ -7,7 +7,7 @@ function aptPackage() {
 }
 
 //Latest jailbreakable iOS version, used for compatibility
-const latestjb = 13.3;
+const latestjb = '13.3.1';
 
 function findPackage(packagesFile, packageToFind) { 
 	//Remove all carriage returns, which should not be there, anyways.
